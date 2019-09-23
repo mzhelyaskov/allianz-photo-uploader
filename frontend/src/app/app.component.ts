@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {FileUploader} from 'ng2-file-upload';
+
+const URL = 'http://localhost:3000/upload-photo/';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'photo-uploader';
+  public uploader: FileUploader = new FileUploader({
+    url: URL,
+    disableMultipart: false
+  });
 }
